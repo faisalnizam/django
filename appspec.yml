@@ -1,8 +1,10 @@
 version: 0.1
 os: linux
 files:
-  - source: /fetchr
+  - source: /index.html # To Show if Deployment is Done , Just a Test HTML Page
     destination: /var/www/html/fetchr
+  - source: /fetchrfaisal
+    destination: /home/
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
@@ -15,8 +17,8 @@ hooks:
     - location: scripts/stop_server
       timeout: 300
       runas: root 
-  ValidateService: 
-    - location: scripts/check_server.sh 
-      timeout: 300 
-      runas: root
+#  ValidateService: 
+#    - location: scripts/check_server.sh 
+#      timeout: 300 
+#      runas: root
 
