@@ -7,18 +7,21 @@ files:
     destination: /home/
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
+#    - location: scripts/configure_tf.sh 
+#      timeout: 300
+#      runas: root
+     - location: scripts/start_server
+       timeout: 300
+       runas: root
+#     - location: scripts/install_dependencies
+#       timeout: 300
+#       runas: root
   ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
-      runas: root 
+     - location: scripts/stop_server
+       timeout: 300
+       runas: root 
 #  ValidateService: 
-#    - location: scripts/check_server.sh 
+#    - location: scripts/check_django.sh 
 #      timeout: 300 
 #      runas: root
 
